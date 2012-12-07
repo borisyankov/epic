@@ -1,0 +1,92 @@
+﻿@model Epic.Domain.Product
+@{
+    ViewBag.Title = Model.Title;
+}
+<nav>
+	<ul class="buttons">
+		<li>@Html.ActionLink("Edit", "edit")</li>
+		<li>Duplicate</li>
+		<li>Delete</li>
+	</ul>
+	<ul class="filters">
+		<li>Showing products by all vendors with any product type</li>
+		<li>list view</li>
+		<li>inventory view</li>
+	</ul>
+</nav>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <fieldset>
+        <legend>New Product</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Description)
+                @Html.TextBoxFor(m => m.Description)
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Properties</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.ProductType)
+                @Html.TextBoxFor(m => m.ProductType)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Vendor)
+                @Html.TextBoxFor(m => m.Vendor)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Price)
+                @Html.TextBoxFor(m => m.Price)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Weight)
+                @Html.TextBoxFor(m => m.Weight)
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Inventory</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.SKU)
+                @Html.TextBoxFor(m => m.SKU)
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Tags</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Tags)
+                @Html.TextBoxFor(m => m.Tags)
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Collections</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Tags)
+                @Html.TextBoxFor(m => m.Tags)
+            </li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>Product Images</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Tags)
+                @Html.TextBoxFor(m => m.Tags)
+            </li>
+        </ol>
+    </fieldset>
+    <input type="submit" value="Create Product" />
+}

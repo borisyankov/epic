@@ -1,0 +1,99 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Content/admin.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+
+    <header>
+        <div class="container">
+			<div class="title">Project E.P.I.C.</div>
+			<nav id="top">
+                <ul>
+                    <li>@Html.ActionLink("Support", "whaaat")</li>
+                    <li>@Html.ActionLink("Account", "account")</li>
+                    <li>@Html.ActionLink("Logout", "whatever")</li>
+                </ul>
+            </nav>
+            <nav id="menu">
+                <ul>
+                    <li>@Html.ActionLink("Dashboard", "index", "dashboard")</li>
+                    <li>@Html.ActionLink("Orders", "index", "orders")</li>
+                    <li>@Html.ActionLink("Products", "index", "products")</li>
+                    <li>@Html.ActionLink("Collections", "index", "collections")</li>
+                    <li>@Html.ActionLink("Blogs & Pages", "index", "pages")</li>
+                    <li>@Html.ActionLink("Navigation", "index", "navigation")</li>
+                    <li>@Html.ActionLink("Promotions", "index", "promotions")</li>
+                    <li>@Html.ActionLink("Themes", "index", "themes")</li>
+                    <li>@Html.ActionLink("Preferences", "index", "preferences")</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>@ViewBag.Title</h1>
+        @RenderBody()
+    </div>
+</body>
+</html>
+
+@*
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+                <div class="float-right">
+                    <ul id="social">
+                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
+*@

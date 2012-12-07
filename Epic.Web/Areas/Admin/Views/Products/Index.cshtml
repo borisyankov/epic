@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Epic.Domain.Product>
+@{
+    ViewBag.Title = "Products";
+}
+<nav>
+	<ul id="buttons">
+		<li>@Html.ActionLink("Add new product", "new")</li>
+		<li>Export products </li>
+		<li>Import products</li>
+	</ul>
+	<ul id="filters">
+		<li>Showing products by all vendors with any product type</li>
+		<li>list view</li>
+		<li>inventory view</li>
+	</ul>
+</nav>
+
+@Html.Partial("_List")

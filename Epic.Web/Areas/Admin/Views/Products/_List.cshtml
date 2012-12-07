@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Epic.Domain.Product>
+<table>
+    <thead>
+        <tr>
+            <th>@Html.CheckBox("SelectAll")</th>
+            <th></th>
+            <th>Product</th>
+            <th>Inventory</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@Html.CheckBox("Selector")</td>
+                <td>[img]</td>
+                <td>
+                    <p>@Html.ActionLink(product.Title, "details", product.Title) </p>
+                    <p>@product.ProductType</p>
+                    <p>@product.Vendor</p>
+                </td>
+                <td>Inventory</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
